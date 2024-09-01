@@ -26,5 +26,7 @@ $stmt->execute();
 
 $stmt->close();
 $conn->close();
-
+// Redirect to another page after form submission
+header("Location: map.html");
+exit();
 ?>
