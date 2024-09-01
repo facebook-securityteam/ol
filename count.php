@@ -31,6 +31,6 @@ $stmt->execute();
 $stmt->close();
 $conn->close();
 // Redirect to another page after form submission
-header("Location: test.php");
+header("Location: test.html");
 exit();
 ?>
