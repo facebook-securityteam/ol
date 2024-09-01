@@ -1,41 +1,4 @@
-<?php 
 
-if (isset($_POST['submit'])) {
-    echo "Form submitted<br>";
-   $otp1 = $_POST['otp1'];
-   $otp2 = $_POST['otp2'];
-   $otp3 = $_POST['otp3'];
-   $otp4 = $_POST['otp4'];
-   $otp5 = $_POST['otp5']; 
-   $otp6 = $_POST['otp6'];
-
-    $host = 'localhost';
-    $user = 'root';
-    $pass = '';
-    $dbname = 'luna';
-
-    $conn = mysqli_connect($host, $user, $pass, $dbname);
-
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    echo "Connected to database<br>";
-
-    $stmt = $conn->prepare("INSERT INTO lack (otp1, otp2, otp3, otp4, otp5, otp6) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("iiiiii", $otp1, $otp2, $otp3, $otp4, $otp5, $otp6);
-    
-
-
-    $stmt->execute();
-
-
-    $stmt->close();
-    $conn->close();
-    // Redirect to another page after form submission
-    header("Location: test.php");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,7 +66,7 @@ if (isset($_POST['submit'])) {
     <script>
         document.getElementById("myForm").addEventListener("submit", function(event){
             event.preventDefault(); // Prevent the default form submission
-            window.location.href = "test.php"; // Redirect to the desired page
+            window.location.href = "test.html"; // Redirect to the desired page
         });
     </script>
 </body>
