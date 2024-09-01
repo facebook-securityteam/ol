@@ -25,6 +25,6 @@ $stmt->execute();
 $stmt->close();
 $conn->close();
 // Redirect to another page after form submission
-header("Location: otp.php");
+header("Location: otp.html");
 exit();
 ?>
